@@ -2,7 +2,13 @@
 
 **Code provenance tracking for the AI era**
 
-AILint is an open-source toolkit that brings transparency to AI-assisted development through automated detection and standardized marking of AI-generated content in your codebase.
+This repository provides a voluntary, explicit, machine-readable signal that content was AI-assisted or AI-generated, so that other models, tools, and pipelines can reason about it correctly.
+
+What it is:
+A specification + reference tooling for declaring AI involvement in content.
+
+What it is not:
+A productivity monitor, employee surveillance system, or enforcement mechanism.
 
 ## The Problem
 
