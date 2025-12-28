@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evosoft.ie/ailint/schema/provenance/v1",
+  "title": "AILint Provenance Statement",
+  "description": "Declarative schema for explicit AI provenance signaling.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": ["ai_involved", "role"],
+
+  "properties": {
+    "ai_involved": {
+      "type": "boolean",
+      "description": "Indicates whether AI systems contributed to the content."
+    },
+
+    "role": {
+      "type": "string",
+      "description": "Nature of AI involvement.",
+      "enum": [
+        "generated",
+        "assisted",
+        "edited",
+        "summarized",
+        "translated",
+        "reviewed"
+      ]
+    },
+
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Optional self-reported confidence in the declaration."
+    },
+
+    "reference": {
+      "type": "string",
+      "description": "Optional reference ID linking to extended provenance metadata."
+    },
+
+    "tool": {
+      "type": "object",
+      "description": "Optional information about the AI tool used.",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the AI system or tool."
+        },
+        "vendor": {
+          "type": "string",
+          "description": "Organization providing the AI system."
+        },
+        "version": {
+          "type": "string",
+          "description": "Tool or model version identifier."
+        }
+      }
+    },
+
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional ISO-8601 timestamp when AI contribution occurred."
+    },
+
+    "scope": {
+      "type": "string",
+      "description": "Optional scope of the provenance statement.",
+      "enum": ["file", "block", "document", "repository"]
+    }
+  }
+}
