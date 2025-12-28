@@ -63,7 +63,7 @@ older provenance remains valid in newer versions
 
 AILint explicitly does not guarantee:
 
-3.1 Authorship or Ownership
+## 3.1 Authorship or Ownership
 
 AILint does not:
 
@@ -73,7 +73,7 @@ establish copyright ownership
 
 replace attribution requirements
 
-3.2 Detection Accuracy
+## 3.2 Detection Accuracy
 
 AILint does not guarantee:
 
@@ -85,7 +85,7 @@ identification of specific models or tools
 
 Inference is always best-effort.
 
-3.3 Intent or Responsibility
+## 3.3 Intent or Responsibility
 
 AILint does not:
 
@@ -95,7 +95,7 @@ assign responsibility
 
 evaluate ethics or compliance
 
-3.4 Content Quality
+## 3.4 Content Quality
 
 AILint does not:
 
@@ -104,6 +104,24 @@ judge correctness
 assess safety
 
 validate factual accuracy
+
+## 3.5 Non-Aggregation for Personnel Evaluation
+
+AILint guarantees that:
+
+**The specification does NOT support aggregation for personnel evaluation**
+
+What this means:
+- Tools SHOULD NOT aggregate provenance at developer level
+- HR or performance monitoring is out of scope
+- Reporting focuses on repository/module scope, not individuals
+
+**Acknowledgment:**
+We cannot technically prevent misuse, but we establish the normative boundary:
+
+**Aggregating provenance data for performance reviews or hiring decisions is contrary to AILint's purpose.**
+
+Organizations should establish policies prohibiting such use.
 
 4. Heuristic Interpretation Disclaimer
 
