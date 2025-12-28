@@ -1,0 +1,67 @@
+{
+  "name": "ailint",
+  "displayName": "AILint",
+  "description": "Code provenance tracking for AI-assisted development",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ailint.analyzeFile",
+        "title": "AILint: Analyze Current File"
+      },
+      {
+        "command": "ailint.showDashboard",
+        "title": "AILint: Show Dashboard"
+      },
+      {
+        "command": "ailint.installGitHook",
+        "title": "AILint: Install Git Hook"
+      }
+    ],
+    "configuration": {
+      "title": "AILint",
+      "properties": {
+        "ailint.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable AILint analysis"
+        },
+        "ailint.threshold": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence threshold for warnings"
+        },
+        "ailint.analyzeOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Analyze file on save"
+        },
+        "ailint.showInStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show AI likelihood in status bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^16.x",
+    "typescript": "^5.0.0"
+  }
+}
