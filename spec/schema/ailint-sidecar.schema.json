@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://evosoft.ie/ailint/schema/sidecar/v1",
+  "title": "AILint Provenance Sidecar Record",
+  "type": "object",
+  "required": ["id", "content_hash", "provenance"],
+  "additionalProperties": false,
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique provenance record identifier."
+    },
+
+    "path": {
+      "type": "string",
+      "description": "Relative path to the content."
+    },
+
+    "content_hash": {
+      "type": "string",
+      "description": "Hash of the content this record applies to."
+    },
+
+    "provenance": {
+      "$ref": "./ailint-provenance.schema.json"
+    },
+
+    "signature": {
+      "type": "string",
+      "description": "Optional cryptographic signature."
+    }
+  }
+}
